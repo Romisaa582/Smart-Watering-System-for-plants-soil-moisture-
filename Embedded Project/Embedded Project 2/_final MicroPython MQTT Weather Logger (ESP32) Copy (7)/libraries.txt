@@ -1,0 +1,11 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+SD
+Adafruit SSD1306
+SSD1306 OLED Display
+ssd1306
+OLED SSD1306 - SH1106
+VEGA_SH1106
+OLED_Display_SSD1306
+ESP8266 and ESP32 OLED driver for SSD1306 displays

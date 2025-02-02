@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -604.8, "left": 292.84, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -431.7, "left": -3173.4, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -579.6,
+      "left": 445.4,
+      "attrs": { "color": "red" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 94.7, "left": -3302.6, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": -671.8, "left": 336, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": -654.1, "left": 172.6, "attrs": {} },
+    { "type": "wokwi-microsd-card", "id": "sd1", "top": 19.43, "left": -2668.73, "attrs": {} },
+    { "type": "wokwi-microsd-card", "id": "sd2", "top": -431.77, "left": 163.27, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": -275.26,
+      "left": -2946.97,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "board-grove-oled-sh1107",
+      "id": "oled2",
+      "top": 57.37,
+      "left": -3270.5,
+      "attrs": {}
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled3",
+      "top": -524.86,
+      "left": -28.57,
+      "attrs": { "i2cAddress": "0x3c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "relay1:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "relay1:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "relay1:IN", "esp:26", "green", [ "h0" ] ],
+    [ "led1:C", "esp:GND.1", "green", [ "v0" ] ],
+    [ "pot2:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot2:SIG", "esp:VP", "green", [ "v0" ] ],
+    [ "pot2:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led1:A", "esp:27", "green", [ "v0" ] ],
+    [ "sd2:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "sd2:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "sd2:SCK", "esp:18", "green", [ "h0" ] ],
+    [ "sd2:DI", "esp:23", "green", [ "h0" ] ],
+    [ "sd2:CS", "esp:15", "green", [ "h0" ] ],
+    [ "sd2:DO", "esp:19", "green", [ "h0" ] ],
+    [ "sd2:CD", "esp:5", "green", [ "h0" ] ],
+    [ "oled3:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "oled3:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "oled3:SCL", "esp:22", "green", [ "v0" ] ],
+    [ "oled3:SDA", "esp:21", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
